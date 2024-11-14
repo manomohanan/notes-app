@@ -1,0 +1,14 @@
+<div class="add-note">
+    <input 
+      type="text" 
+      [(ngModel)]="newTitle" 
+      placeholder="Note Title" 
+    />
+    <textarea 
+      [(ngModel)]="newContent" 
+      placeholder="Note Content">
+    </textarea>
+    <button (click)="onSubmit()" [disabled]="!newTitle.trim() || !newContent.trim()">
+      {{ noteToEdit ? 'Update Note' : 'Add Note' }}
+    </button>
+</div>
